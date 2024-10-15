@@ -14,7 +14,7 @@ def vista_datos1 (request, nombre):
     nombre_mayuscula = nombre.upper()
     return HttpResponse(f'Hola {nombre_mayuscula}')
 
-def primer_template (request):
+def acerca_de_mi (request):
     fecha = datetime.now()
     datos = {
         'fecha' : fecha,
@@ -36,7 +36,7 @@ def primer_template (request):
     '''
     
     #v3
-    return render(request, 'inicio/primer_template.html', datos)
+    return render(request, 'inicio/acerca_de_mi.html', datos)
     
     #return HttpResponse(render_template) sirve para la version 1 y 2
 

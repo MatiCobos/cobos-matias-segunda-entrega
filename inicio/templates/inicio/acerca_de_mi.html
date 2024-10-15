@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- ### -->
+
+
+{% block title_head %}
+    Acerca de mi
+{% endblock title_head %}
+
+{% block h1_header %}
+    Acerca de mi
+{% endblock h1_header %}
+
+{% block main %}
+
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'assets/img/bg-showcase-3.jpg' %})"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Acerca de mi</h2>
+                <p class="lead mb-0">¡Hola! Soy Matías Cobos, tengo 36 años y actualmente estoy expandiendo mis habilidades en programación a través de un curso de Python.<br><br> Actualmente trabajo como administrativo en un hospital, donde he adquirido valiosa experiencia en organización y atención al cliente. Sin embargo, estoy buscando nuevas oportunidades que me permitan crecer profesionalmente en el campo de la tecnología.<br><br>
+
+                En mi tiempo libre, disfruto de estar en familia, ir a la cancha para ver partidos, y pasar tiempo con amigos. También me encanta jugar con mi perro, quien siempre aporta alegría a mis días. Estoy entusiasmado por seguir aprendiendo y aplicar mis conocimientos en proyectos reales, mientras busco un trabajo que se alinee con mis intereses y habilidades.<br><br>
+                    
+                ¡Gracias por visitar mi portfolio!</p>
+            </div>
+        </div>
+<section/>
+
+{% endblock main %}
