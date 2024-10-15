@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- ### -->
+
+
+{% block title_head %}
+    Crear auto
+{% endblock title_head %}
+
+{% block h1_header %}
+    Pantalla inicio Crear auto
+{% endblock h1_header %}
+
+{% block main %}
+<form action="{% url 'inicio:crear_auto' %}" method="POST">
+    {% csrf_token %}
+    <!--     <input type="text" name="modelo" placeholder="Modelo" required>
+    <input type="text" name="marca" placeholder="Marca" required>
+    <input type="number" name="año" placeholder="Año" required> -->
+
+    {{form}}
+
+    <input type="submit" value="Enviar">
+</form>
+{% endblock main %}
