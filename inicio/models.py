@@ -1,10 +1,10 @@
 from django.db import models
 
-
 class Persona(models.Model):
-    nombre = models.CharField(max_length=20)
-    apellido = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=10)
+    apellido = models.CharField(max_length=10)
+    dni = models.IntegerField()
     edad = models.IntegerField()
 
     def __str__(self):
-        return f'{self.nombre} {self.apellido}, {self.edad} años'
+        return f'Nombre: {self.nombre.capitalize()}. Apellido: {self.apellido.capitalize()}. D.N.I: {self.dni}'

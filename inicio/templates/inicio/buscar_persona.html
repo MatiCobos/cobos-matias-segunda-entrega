@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-<!-- ### -->
-
 
 {% block title_head %}
     Buscar cliente
@@ -13,20 +11,37 @@
 
 {% block main %}
 
-<form action={% url "inicio:buscar_persona" %}>
+<div class="container">
+    <form action="{% url 'inicio:buscar_persona' %}" method="GET">
+        <div class="mb-3">
+            {{ form }}
+        </div>
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" value="Buscar">
+        </div>
+    </form>
 
-    {{form}}
-
-    <input type="submit">
-</form>
-{% if personas %}
-    <ul>    
-        {% for i in personas %}
-            <li>{{i}}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-<p>No hay personas registradas.</p>
-{% endif %}
+    {% if personas %}
+        <section class="testimonials text-center bg-light">
+            <div class="container">
+                <h2 class="mb-5">Personas encontradas</h2>
+                <div class="row justify-content-center">
+                    {% for persona in personas %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="testimonial-item mx-auto">
+                                <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/user.png' %}" alt="..." />
+                                <h5>{{ persona.nombre|capfirst }} {{ persona.apellido|capfirst }}</h5>
+                                <p class="font-weight-light mb-0">DNI: {{ persona.dni }}</p>
+                                <p class="font-weight-light mb-0">Edad: {{ persona.edad }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <p>No hay personas registradas.</p>
+    {% endif %}
+</div>
 
 {% endblock main %}

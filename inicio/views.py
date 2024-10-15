@@ -9,7 +9,6 @@ def inicio (request):
 
     return render(request, 'inicio/index.html')
 
-
 def acerca_de_mi (request):
 
     return render(request, 'inicio/acerca_de_mi.html')
@@ -22,7 +21,7 @@ def crear_persona(request):
 
         if formulario.is_valid():
             data = formulario.cleaned_data
-            persona = Persona(nombre=data.get('nombre'), apellido=data.get('apellido'), edad=data.get('edad'))
+            persona = Persona(nombre=data.get('nombre'), apellido=data.get('apellido'), edad=data.get('edad'), dni=data.get('dni'))
             persona.save()
             return redirect('inicio:buscar_persona')
 
