@@ -4,16 +4,16 @@
 
 
 {% block title_head %}
-    Crear auto
+    Cargar cliente
 {% endblock title_head %}
 
 {% block h1_header %}
-    Pantalla inicio Crear auto
+    Pantalla inicio cargar cliente
 {% endblock h1_header %}
 
 {% block main %}
-<form action="{% url 'inicio:crear_auto' %}" method="POST">
-    {% csrf_token %}
+<form action="{% url 'inicio:crear_persona' %}" method="POST">
+    {% csrf_token %} 
 
     {{form}}
 

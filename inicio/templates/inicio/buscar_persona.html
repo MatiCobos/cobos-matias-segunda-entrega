@@ -4,29 +4,29 @@
 
 
 {% block title_head %}
-    Buscar Auto
+    Buscar cliente
 {% endblock title_head %}
 
 {% block h1_header %}
-    Pantalla inicio buscar auto
+    Pantalla inicio buscar cliente
 {% endblock h1_header %}
 
 {% block main %}
 
-<form action={% url "inicio:buscar_auto" %}>
+<form action={% url "inicio:buscar_persona" %}>
 
     {{form}}
 
     <input type="submit">
 </form>
-{% if autos %}
+{% if personas %}
     <ul>    
-        {% for auto in autos %}
-            <li>{{auto}}</li>
+        {% for i in personas %}
+            <li>{{i}}</li>
         {% endfor %}
     </ul>
 {% else %}
-<p>No hay autos registrados.</p>
+<p>No hay personas registradas.</p>
 {% endif %}
 
 {% endblock main %}

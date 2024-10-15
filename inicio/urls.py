@@ -1,13 +1,11 @@
 from django.urls import path
-from inicio.views import inicio, vista_datos1, acerca_de_mi, crear_auto, buscar_auto
+from inicio.views import inicio,  acerca_de_mi, crear_persona, buscar_persona
 
 app_name = 'inicio'
 
 urlpatterns = [
     path('', inicio, name='inicio'),
-    path('vista-datos1/<nombre>/', vista_datos1),
-    path('primer-temple/', acerca_de_mi, name='acerca_de_mi'),
-    path('creacion_auto_correcto/', crear_auto),
-    path('buscar_auto/', buscar_auto, name='buscar_auto'),
-    path('crear_auto/', crear_auto, name='crear_auto')
+    path('acerca_de_mi/', acerca_de_mi, name='acerca_de_mi'),
+    path('crear_persona/', crear_persona, name='crear_persona'),
+    path('buscar_persona/', buscar_persona, name='buscar_persona'),
 ]

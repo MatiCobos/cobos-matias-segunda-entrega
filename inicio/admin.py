@@ -1,6 +1,4 @@
 from django.contrib import admin
-from inicio.models import Auto
+from inicio.models import Persona
 
-# Register your models here.
-
-admin.site.register(Auto)
+admin.site.register(Persona)
